@@ -12,3 +12,6 @@
 $ git init
 Initialized empty Git repository in /Users/skills/Projects/recipe-repository/.git/
 ```
+
+- [ ] Llegar a las 4:45 pm
+- [ ] Sentarte en buen lugar
