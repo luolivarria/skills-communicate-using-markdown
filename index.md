@@ -74,19 +74,29 @@ A su vez, hablamos de redes neuronales con conexión hacia delante (redes feedfo
 
 ### Técnicas empleadas durante la fase de entrenamiento con redes neuronales
 
-- [ ] Aprendizaje supervisado.
+- Aprendizaje supervisado.
 Las redes neuronales supervisadas se entrenan para producir las salidas deseadas como respuesta a entradas de muestra, por lo que resultan idóneas para modelar y controlar sistemas dinámicos, clasificar datos con ruido y predecir eventos futuros.
-- [ ] Clasificación.
+- Clasificación.
 La clasificación es un tipo de machine learning supervisado en el que un algoritmo “aprende” a clasificar nuevas observaciones a partir de ejemplos de datos etiquetados.
-- [ ] Regresión.
+- Regresión.
 Los modelos de regresión describen la relación entre una variable de respuesta (salida) y una o varias variables de predicción (entrada).
-- [ ] Reconocimiento de patrones.
+- Reconocimiento de patrones.
 Funciona mediante la clasificación de los datos de entrada en objetos o clases en función de características clave, ya sea mediante la clasificación supervisada o no supervisada.
-- [ ] Aprendizaje no supervisado.
+- Aprendizaje no supervisado.
 Las redes neuronales no supervisadas se entrenan permitiendo que la red neuronal se autoajuste continuamente a las nuevas entradas. Se emplean para inferir información a partir de conjuntos de datos que constan de datos de entrada sin respuestas etiquetadas. Se pueden utilizar para descubrir distribuciones naturales, categorías y relaciones entre categorías en los datos.
-- [ ] Clustering.
+- Clustering.
 El clustering es un enfoque de aprendizaje no supervisado en el cual se pueden emplear redes neuronales para el análisis de datos exploratorio a fin de localizar patrones ocultos o agrupaciones de datos. Este proceso implica la agrupación de datos por similitud. Entre las aplicaciones del análisis de clusters están el análisis de secuencias genéticas, la investigación de mercados y el reconocimiento de objetos.
 
 ## Problema elegido para implementar una red neuronal
 
 Estimacion de aforo vehicular en la ciudad de Hermosillo para el año 2030, de acuerdo con datos de Hermosillo Como Vamos.
+
+
+##### Fuentes consultadas
+
+https://la.mathworks.com/discovery/neural-network.html
+
+http://www.cucei.udg.mx/sites/default/files/pdf/toral_barrera_jamie_areli.pdf 
+
+https://levity.ai/blog/business-applications-artificial-neural-networks 
+
