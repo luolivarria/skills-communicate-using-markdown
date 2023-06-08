@@ -94,9 +94,9 @@ Estimacion de aforo vehicular en la ciudad de Hermosillo para el año 2030, de a
 
 ##### Fuentes consultadas
 
-https://la.mathworks.com/discovery/neural-network.html
+“¿Qué Es Una Red Neuronal?” ¿Qué Es Una Red Neuronal? - MATLAB Simulink, https://la.mathworks.com/discovery/neural-network.html. Accesado el 4 de junio 2023.
 
-http://www.cucei.udg.mx/sites/default/files/pdf/toral_barrera_jamie_areli.pdf 
+Toral-Barrera, Jamie Areli. Redes Neuronales. Universidad de Guadalajara (México). http://www.cucei.udg.mx/sites/default/files/pdf/toral_barrera_jamie_areli.pdf Accesado el 3 de junio 2023.
 
-https://levity.ai/blog/business-applications-artificial-neural-networks 
+Orza, Patricia (2022). "Neural business applications of artificial neural networks". Levity AI GmbH, https://levity.ai/blog/business-applications-artificial-neural-networks. Accesadi el 4 de junio 2023.
 
