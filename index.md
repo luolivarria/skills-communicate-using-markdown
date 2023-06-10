@@ -1,4 +1,10 @@
-## Red Neuronal o Artificial Neural Network ANN
+# Trabajo individual
+
+## Módulo: Algebra lineal y optimización
+#### Alumno: Luis Federico Olivarría Ávila
+
+
+## Red Neuronal o Artificial Neural Network (ANN)
 
 Es un modelo de computación cuya estructura de capas se asemeja a la estructura interconectada de las neuronas en el cerebro, con capas de nodos conectados. Una red neuronal puede aprender de los datos, de manera que se puede entrenar para que reconozca patrones, clasifique datos y pronostique eventos futuros.
 
@@ -27,15 +33,15 @@ Figura 2. Sistema de conduccion atónomo de Tesla.
 Las redes neuronales son modelos matemáticos que intentan reproducir el comportamiento del cerebro humano. El principal objetivo de este modelo es la construcción de sistemas capaces de presentar un cierto comportamiento inteligente. Esto implica la capacidad de aprender a realizar una determinada tarea. 
 Una red neuronal está compuesta de tres partes: Entrada, núcleo y salidas. 
 La figura 3 muestra un esquema de una red neuronal artificial. 
-Las entradas reciben los datos o parámetros que le permiten decidir a la neurona se estará activa o no, normalmente se presentan como 𝑥1, 𝑥2, … , 𝑥𝑛. 
-Entre la entrada y el núcleo se tienen los pesos (𝑤1, 𝑤2, … , 𝑤𝑛), que representan la memoria de la red. 
+Las entradas reciben los datos o parámetros que le permiten decidir a la neurona se estará activa o no, normalmente se presentan como $𝑥_1$, $𝑥_2$, $…$ , $𝑥_𝑛$. 
+Entre la entrada y el núcleo se tienen los pesos ($𝑤_1$, $𝑤_2$, $…$ , $𝑤_𝑛$), que representan la memoria de la red. 
 En el núcleo se realizan todas las operaciones necesarias para determinar la salida de la neurona; el proceso que se realiza en el núcleo varía dependiendo de la red neuronal que se esté trabajando. 
 
 ![Image of Neurona](https://gjorge.files.wordpress.com/2007/08/nueva-imagen.png)
 
 Figura 3. Elementos básicos de una red neuronal.
 
-Las salidas devuelven la respuesta de la neurona, es decir se está activa o no, representadas comúnmente como 𝑦1, 𝑦2, … , 𝑦𝑛.
+Las salidas devuelven la respuesta de la neurona, es decir se está activa o no, representadas comúnmente como $𝑦_1$, $𝑦_2$, $…$ , $𝑦_𝑛$.
 
 En el núcleo se realizan 3 tipos de operaciones para determinar la salida de la neurona que son: Regla de propagación, Función de activación y Función de salida. La regla de propagación, integra la información proveniente de las distintas neuronas artificiales y proporciona el valor del potencial postsináptico de la neurona i. La función de activación, provee el estado de activación actual de la neurona i. La función de salida, representa la salida actual de la neurona i.
 
@@ -91,15 +97,15 @@ El clustering es un enfoque de aprendizaje no supervisado en el cual se pueden e
 
 Estimacion del crecimiento en el registro de vehiculos automotores de la ciudad de Hermosillo para el año 2030, de acuerdo con datos historicos recabados por la Asociación Civil Hermosillo ¿Cómo Vamos?.
 
-## Desarrollo matemático para implementar una red neuronal como solucion al problema elegido.
+## Desarrollo matemático para implementar una red neuronal como solucion al problema elegido
 
 Como se mencionó anteriormente, la neurona es la unidad de informacion básica de una red neuronal. Esta consiste en:
 
 Una serie de enlaces, que describen las entradas de las neuronas con pesos $W_{1}, W_{2}, ..., W_{m}$
 Un combinador lineal para operar la suma de los pesos en las entradas $$u = \sum_{j=1}^m W_j X_j $$
-Una funcion de activación $phi$ para limitar la amplitud de la neurona de salida. En la siguiente ecuacion "b" es la inclinacion $y = phi(u + b)$
+Una funcion de activación $\phi$ para limitar la amplitud de la neurona de salida. En la siguiente ecuacion "b" es la inclinacion $y = \phi(u + b)$
 
-La eleccion de la funcion de activación $phi$ determinará el modelo de red neuronal. Entre las mas utilizadas estan la funcion escalon, rampa, sigmoide y Gaussina.
+La eleccion de la funcion de activación $\phi$ determinará el modelo de red neuronal. Entre las mas utilizadas estan la funcion escalon, rampa, sigmoide y Gaussina.
 Para el problema elegido, tomaré la funcion sigmoide, misma que tiene los parametros $z, x, y$ en la siguiente formula
 $$\phi(v) = z +\frac{1}{1+exp(-A*vi)}$$
 donde A > 0, $V_i = \sum W_ij * Y_j$, donde $W_ij$ es el peso de los enlaces desde el nodo $i$ al nodo $j$ y $Y_j$ es la salida del nodo $j$. 
@@ -112,26 +118,51 @@ El algoritmo para el entrenamiento es el de retropropagación. Este busca el pes
 
 En mi caso la red consistirá en 3 capas, $i$ representa los nodos en la capa de entrada, $j$ representa los nodos en la capa oculta y $k$ representa los nodos en la capa de salida. $W_ij$ se refiere al peso de las conecciones entre un nodo en la capa de entrada y un nodo en la capa oculta. La siguiente ecuacion se usa para obtener el valor de salida de $Y_j$ de el nodo $j$.
 
-$$ Y_j = \frac{1}{1 + exp(-X_j}$$
+$$ Y_j = \frac{1}{1 + exp(-X_j)}$$
 
 donde $X_j = \sum X_i * W_ij - \theta_j$, 1 <= $i$ <= $n$, $n$ es el numero de inputs al nodo $j$ y $\theta_j$ es el limite para el nodo $j$.
 
+Es necesario estar utilizando el error cuadrático promedio total. El error de una neurona de salida $k$ despues de la activación de la red en el entrenamiento $n_esimo$ de (x(n), d(n)) es $e_k(n) = d_k(n) - y_k(n)$.
+El error de la red neuronal es la suma de los errores cuadraticos de las neuronas de salida:
+$$E(n) = \sum e_k^2 (n) $$
 
+Por lo tanto, el error cuadratico promedio total es el promedio de los errores de la red neuronal de los ejemplos de entrenamiento:
+$$E_AV = \frac{1}{N} \sum_{n=1}^N E(n)  $$
 
-begin{gather*}
-W_1, W_2, ..., W_m
-\end{gather*}
+La actualizacion en el peso de retropropagacion esta basada en el metodo del gradiente de descenso donde toma un paso en la direccion que produce la maxima disminucion del error $E$ de la red neuronal, siendo esta opuesta al gradiente de $E$.
+La iteracion del algoritmo de retropropagación termina isialmente cuando la suma de los errores cuadraticos de los valores de salida de todos los datos de entrada en una época es menor que un valor de limite, por ejemplo a 0.01.
 
-$$
-  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
-$$
+$$w_ij = w_ij + \Delta w_ij$$ 
 
+$$\Delta w_ij = -\eta \frac{\partial E}{\partial w_ij}$$
+
+Para implementar la red neuronal, es necesario normalizar los valores entre $0$ y $1$ de acuerdo con la siguiente formula:
+$$x_{normalizado} = \frac{x_{original} - minimo_x}{Maximo_x - minimo_x} $$
+
+para cada valor de x en su enesimo atributo, $minimo_x$ y $Maximo_x$ son los valores minimos y maximos del valor de los atributos en su conjunto de valores de entrenamiento.
+
+El numero de capas y de neuronas se determinará durante la implementacion de la red neuronal. En la practica se determina por prueba y error, comenzando con una red pequeña e introduciendo neuronas hasta que su desempeño sea el satisfactorio.
+
+En cuanto a la inicializacion de los pesos,  estos pueden comenzar con valores tipicos entre -1.0 y 1.0 o -0.5 y 0.5. Cuando algunas entradas con mucho mas grandes que otras, una inicializacion aleatoria es recomendable de acuerdo con lo siguiente:
+
+$$w_ij = \pm \frac{1}{2N} \sum_{i=1,...,N} \frac{1}{|X_i|} $$ Para los pesos de de la entrada a la primera capa.
+
+$$w_jk = \pm \frac{1}{2N} \sum_{i=1,...,N} \frac{1}{\varphi(\sum w_(ij) x_i)} $$ Para los pesos de la primera capa a la segunda capa.
+
+El valor de la tasa de aprendizaje o $\eta$ dependera de la aplicacion, pero generalmente oscila entre 0.1 y 0.9.
+
+Por ultimo, para el entrenamiento se puede seguir la regla del pulgar que dice: "el numero de ejemplos de entrenamiento debe ser al menos de entre 5 y 10 veces el numero de los pesos de la red neuronal".
+Otra manera de determinarlo es con:
+$$N > \frac{|W|}{(1-a)} $$
+$|W|$ = numero de pesos, $a$ = precision esperada en el conjunto de entrenamiento
 
 ##### Fuentes consultadas
-
-“¿Qué Es Una Red Neuronal?” ¿Qué Es Una Red Neuronal? - MATLAB Simulink, https://la.mathworks.com/discovery/neural-network.html. Accesado el 4 de junio 2023.
+¿Qué Es Una Red Neuronal? - MATLAB Simulink, https://la.mathworks.com/discovery/neural-network.html. Accesado el 3 de junio 2023.
 
 Toral-Barrera, Jamie Areli. Redes Neuronales. Universidad de Guadalajara (México). http://www.cucei.udg.mx/sites/default/files/pdf/toral_barrera_jamie_areli.pdf Accesado el 3 de junio 2023.
 
 Orza, Patricia (2022). "Neural business applications of artificial neural networks". Levity AI GmbH, https://levity.ai/blog/business-applications-artificial-neural-networks. Accesadi el 4 de junio 2023.
 
+Hermosillo ¿Cómo Vamos? (2022). Informe de Indicadores 2022. Hermosillo, México: Observatorio para la Competitividad y el Desarrollo de Sonora A.C.
+
+Rojas, Raul (1996). Neural Networks A systematic introduction. Springer-Verlag. Alemania.
