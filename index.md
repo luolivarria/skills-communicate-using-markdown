@@ -89,7 +89,42 @@ El clustering es un enfoque de aprendizaje no supervisado en el cual se pueden e
 
 ## Problema elegido para implementar una red neuronal
 
-Estimacion de aforo vehicular en la ciudad de Hermosillo para el año 2030, de acuerdo con datos de Hermosillo Como Vamos.
+Estimacion del crecimiento en el registro de vehiculos automotores de la ciudad de Hermosillo para el año 2030, de acuerdo con datos historicos recabados por la Asociación Civil Hermosillo ¿Cómo Vamos?.
+
+## Desarrollo matemático para implementar una red neuronal como solucion al problema elegido.
+
+Como se mencionó anteriormente, la neurona es la unidad de informacion básica de una red neuronal. Esta consiste en:
+
+Una serie de enlaces, que describen las entradas de las neuronas con pesos $W_{1}, W_{2}, ..., W_{m}$
+Un combinador lineal para operar la suma de los pesos en las entradas $$u = \sum_{j=1}^m W_j X_j $$
+Una funcion de activación $phi$ para limitar la amplitud de la neurona de salida. En la siguiente ecuacion "b" es la inclinacion $y = phi(u + b)$
+
+La eleccion de la funcion de activación $phi$ determinará el modelo de red neuronal. Entre las mas utilizadas estan la funcion escalon, rampa, sigmoide y Gaussina.
+Para el problema elegido, tomaré la funcion sigmoide, misma que tiene los parametros $z, x, y$ en la siguiente formula
+$$\phi(v) = z +\frac{1}{1+exp(-A*vi)}$$
+donde A > 0, $V_i = \sum W_ij * Y_j$, donde $W_ij$ es el peso de los enlaces desde el nodo $i$ al nodo $j$ y $Y_j$ es la salida del nodo $j$. 
+
+Existen 3 tipos de arquitecturas para redes neuronales: una capa de alimentacion hacia adelante, multiples capas de alimentacion hacia adelante y recurrente.
+
+En mi caso seleccioné una red neuronal multicapa con alimentacion hacia adelante. Es la arquitectura más utilizada y cuenta con capas ocultas entre la capa de entrada y la capa de salida.
+
+El algoritmo para el entrenamiento es el de retropropagación. Este busca el peso de los valores que minimicen el error total de la red sobre un grupo de valores de entrenamiento.
+
+En mi caso la red consistirá en 3 capas, $i$ representa los nodos en la capa de entrada, $j$ representa los nodos en la capa oculta y $k$ representa los nodos en la capa de salida. $W_ij$ se refiere al peso de las conecciones entre un nodo en la capa de entrada y un nodo en la capa oculta. La siguiente ecuacion se usa para obtener el valor de salida de $Y_j$ de el nodo $j$.
+
+$$ Y_j = \frac{1}{1 + exp(-X_j}$$
+
+donde $X_j = \sum X_i * W_ij - \theta_j$, 1 <= $i$ <= $n$, $n$ es el numero de inputs al nodo $j$ y $\theta_j$ es el limite para el nodo $j$.
+
+
+
+begin{gather*}
+W_1, W_2, ..., W_m
+\end{gather*}
+
+$$
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+$$
 
 
 ##### Fuentes consultadas
